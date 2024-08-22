@@ -14,6 +14,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/blog_api')
 var autherRouter = require('./routes/auther');
 var blogsRouter = require('./routes/blogs');
 var categoriesRouter = require('./routes/categories')
+const commentRouter = require('./routes/comments'); 
 
 var app = express();
 
@@ -30,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', autherRouter);
 app.use('/blogs', blogsRouter);
 app.use('/categories',categoriesRouter)
+app.use('/comments', commentRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
