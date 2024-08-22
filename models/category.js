@@ -10,7 +10,7 @@ const categoryDataSchema = new Schema({
 
     authId : {
         type : mongoose.Schema.Types.ObjectId ,
-        ref : 'BLOG'
+        ref : 'AUTHOR'
     }
 
 })
