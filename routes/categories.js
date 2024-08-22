@@ -4,7 +4,7 @@ let router = express.Router();
 let categoryController = require("../controller/Category")
 
 
-router.post('/create', categoryController.categoryCreate);
+router.patch('/create', categoryController.categoryCreate);
 
 
 router.get('/', categoryController.categoryData);
