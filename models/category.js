@@ -6,6 +6,11 @@ const categoryDataSchema = new Schema({
     categoryName: {
         type: String,
         require: true,
+    },
+
+    authId : {
+        type : mongoose.Schema.Types.ObjectId ,
+        ref : 'BLOG'
     }
 
 })
