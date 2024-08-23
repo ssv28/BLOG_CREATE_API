@@ -26,7 +26,7 @@ exports.blogData = async function (req, res, next) {
 
     try {
 
-        let blogData = await BLOG.find()
+        let blogData = await BLOG.find().populate("authId")
 
         res.status(200).json({
             status: "Success",

@@ -8,10 +8,6 @@ const categoryDataSchema = new Schema({
         require: true,
     },
 
-    authId : {
-        type : mongoose.Schema.Types.ObjectId ,
-        ref : 'AUTHOR'
-    }
 
 })
 

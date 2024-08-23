@@ -30,6 +30,12 @@ const blogDataSchema = new Schema({
         require: true,
     },
 
+    
+    authId : {
+        type : mongoose.Schema.Types.ObjectId ,
+        ref : 'AUTHOR'
+    }
+
 })
 
 const BLOG = mongoose.model('BLOG', blogDataSchema);     // Create a model from the schema

@@ -26,7 +26,7 @@ exports.categoryData = async function (req, res, next) {
 
     try {
 
-        let categogyData = await CATEGORY.find().populate("authId")
+        let categogyData = await CATEGORY.find()
 
         res.status(200).json({
             status: "Success",
