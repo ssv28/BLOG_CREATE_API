@@ -8,19 +8,12 @@ const likeDataSchema = new Schema({
         ref: 'BLOG',
         required: true,
     },
-    authorId: {
+    authId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'AUTHOR',
         required: true,
     },
-    categoryId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'CATEGORY',
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
+    
 });
 
 // Create a model from the schema

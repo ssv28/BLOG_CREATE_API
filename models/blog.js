@@ -21,13 +21,14 @@ const blogDataSchema = new Schema({
     },
 
     published :{
-        type: String,
-        require: true,
+        type: Date,
+        default: Date.now
+        
     },
 
     updated :{
-        type: String,
-        require: true,
+        type: Date,
+        default: Date.now,
     },
 
     
