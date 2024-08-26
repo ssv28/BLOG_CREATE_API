@@ -9,13 +9,13 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/blog_api')
   .then(() => console.log('Connected!'))
   .catch((err) => console.log(err.message))
-  
+
 
 var autherRouter = require('./routes/auther');
 var blogsRouter = require('./routes/blogs');
 var categoriesRouter = require('./routes/categories')
-const commentRouter = require('./routes/comments'); 
-const likeRouter = require('./routes/likes'); 
+const commentRouter = require('./routes/comments');
+const likesRouter = require('./routes/likes');
 
 var app = express();
 
@@ -31,17 +31,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', autherRouter);
 app.use('/blogs', blogsRouter);
-app.use('/categories',categoriesRouter)
+app.use('/categories', categoriesRouter)
 app.use('/comments', commentRouter);
-app.use('/likes',likeRouter)
+app.use('/likes', likesRouter)
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
